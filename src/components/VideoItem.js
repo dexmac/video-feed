@@ -24,6 +24,9 @@ class VideoItem extends Component {
       VideoPlayer = (
         <ReactPlayer
           className="react-player"
+          config = {{file : {
+            "forceVideo": true,
+          }}}
           url={item ? item.url : null}
           key={item ? item.videoId : null}
           width="100%"
@@ -32,15 +35,6 @@ class VideoItem extends Component {
           playing
           muted
           playsinline
-          file={{
-                 "attributes": {},
-                 "forceAudio": false,
-                 "forceDASH": false,
-                 "forceHLS": false,
-                 "forceVideo": false,
-                 "hlsOptions": {},
-                 "tracks": []
-               }}
         />
       );
     } else {
