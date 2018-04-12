@@ -76,6 +76,17 @@ exports[`renders correctly 1`] = `
         }
       }
       controls={false}
+      file={
+        Object {
+          "attributes": Object {},
+          "forceAudio": false,
+          "forceDASH": false,
+          "forceHLS": false,
+          "forceVideo": false,
+          "hlsOptions": Object {},
+          "tracks": Array [],
+        }
+      }
       height="100%"
       key="null"
       loop={false}

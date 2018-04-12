@@ -32,6 +32,15 @@ class VideoItem extends Component {
           playing
           muted
           playsinline
+          file={{
+                 "attributes": {},
+                 "forceAudio": false,
+                 "forceDASH": false,
+                 "forceHLS": false,
+                 "forceVideo": false,
+                 "hlsOptions": {},
+                 "tracks": []
+               }}
         />
       );
     } else {
