@@ -39,7 +39,7 @@
     "lint": "eslint --ignore-pattern 'src/styles/*' -- src/**",
     "lint:fix": "eslint --fix --ignore-pattern 'src/styles/*' -- src/**",
     "check": "yarn run lint && yarn run test",
-    "build": "yarn check && react-scripts build"
+    "build": "yarn run check && react-scripts build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

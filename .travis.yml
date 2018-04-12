@@ -1,0 +1,15 @@
+os:
+  - linux
+  - osx
+language: node_js
+node_js:
+  - "7"
+  - "8"
+sudo: false
+dist: trusty
+env:
+  - NODE_ENV=PROD
+install:
+  - npm install
+script:
+  - npm run build
