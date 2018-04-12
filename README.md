@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/dexmac/video-feed.svg?branch=master)](https://travis-ci.org/dexmac/video-feed)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/dexmac/video-feed/master/LICENSE)
 
-
 **Table of Contents**
 
 - [Project Intro](#Intro)
@@ -15,7 +14,7 @@
 ## Intro
 
 A filterable video-feed demo in ReactJS. Uses Express as the backend to serve a video feed,
-which is comprised from regular video URLs, Facebook & Youtube videos.
+which is comprised of - regular video URLs, Facebook & Youtube videos.
 The feed can then be filtered by the video type (URL / Facebook / Youtube).
 
 ![preview](video-feed.gif)
@@ -30,11 +29,11 @@ The feed can then be filtered by the video type (URL / Facebook / Youtube).
 ## Run
 
 ## Testing
-- `yarn run lint` - Run the eslint checker
-- `yarn run lint:fix` - Fix lint warning automatically
-- `yarn run test` - Launches the test runner
-- `yarn run tdd` - Launches the test runner in interactive watch mode, allowing for TDD
-- `yarn run check` - running lint and test together. This script is used pre-build and in the `pre-commit` hook.
+- `yarn run lint` - Run ESLint for code linting
+- `yarn run lint:fix` - Fix lint warnings automagically
+- `yarn run test` - Launch the test runner
+- `yarn run tdd` - Launch the test runner in interactive watch mode for TDD
+- `yarn run quality-check` - Run lint + test together. This script is used pre-build and in the `pre-commit` hook.
 
 More info. and examples for writing unit tests can be found [here](./WRITING_TESTS.md).
 
@@ -55,20 +54,13 @@ You will also see any lint errors in the console.
 
 ### `yarn run server`
 
-Launches an Express server on port 4000.<br>
+Launches the Express server for serving the feed items on port 4000.<br>
 Open [http://localhost:4000/content/feed/items](http://localhost:4000/content/feed/items) to view the video feed in the browser.
 
 ### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It lints and runs the unit tests and then correctly bundles React in production mode and optimizes the build for the best performance.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 <a name="Contribute"></a>
 
@@ -87,7 +79,7 @@ The PR review process can be found [here](./PR_REVIEW.md).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-*Package and Dependency Management*
+- Package and Dependency Management:
 The project uses yarn as it's package manager, however, npm should work seamlessly as well.
 Webpack is used to pack the bundle and provides ES6 modules dependency management.
 
@@ -102,6 +94,7 @@ Webpack is used to pack the bundle and provides ES6 modules dependency managemen
 - `Jest` + `enzyme` + `enzyme-adapter-react-16` + `react-test-renderer` - Used for Unit Testing
 - `babel` - For transpiling ES6 and JSX
 - `eslint` - For linting the code
+- `prettier` - For making it pretty
 - `whatwg-fetch` && `raf` && `identity-obj-proxy` - fetch and requestAnimationFrame polyfills + mock CSS files for JEST tests
 - `concurrently` - For running both client and server together (using `yarn dev`)
 

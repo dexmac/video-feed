@@ -1,16 +1,14 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
 import VideoItemHeader from "./VideoItemHeader";
 import { ERR_LOADING_VIDEO_PREFIX } from "../constants";
 
 class VideoItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shouldShowVideo: true,
-      errorString: ""
-    };
-  }
+  state = {
+    shouldShowVideo: true,
+    errorString: ""
+  };
 
   onVideoError = url => {
     this.setState({ shouldShowVideo: false, errorString: url });
@@ -24,9 +22,6 @@ class VideoItem extends Component {
       VideoPlayer = (
         <ReactPlayer
           className="react-player"
-          config = {{file : {
-            "forceVideo": true,
-          }}}
           url={item ? item.url : null}
           key={item ? item.videoId : null}
           width="100%"
@@ -35,6 +30,7 @@ class VideoItem extends Component {
           playing
           muted
           playsinline
+	  config={{ file: {forceVideo: true } }}
         />
       );
     } else {
@@ -48,11 +44,23 @@ class VideoItem extends Component {
 
     return (
       <div className="video-item">
-        <VideoItemHeader {...this.props} />
+        <VideoItemHeader
+          title={item && item.title ? item.title : ""}
+          views={item && item.views ? item.views : null}
+        />
         <div className="player-wrapper">{VideoPlayer}</div>
       </div>
     );
   }
 }
 
+VideoItem.propTypes = {
+  item: PropTypes.shape({
+    url: PropTypes.string,
+    source: PropTypes.string,
+    videoId: PropTypes.string,
+    title: PropTypes.string,
+    views: PropTypes.number
+  })
+};
 export default VideoItem;

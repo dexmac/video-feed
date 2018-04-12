@@ -1,7 +1,7 @@
 import React from "react";
-import VideoItem from "../../components/VideoItem";
+import VideoItemTitle from "../../components/VideoItemTitle";
 
 it("renders correctly && matches snapshot", () => {
-  const tree = shallow(<VideoItem />);
+  const tree = shallow(<VideoItemTitle />);
   expect(tree).toMatchSnapshot();
 });

@@ -88,7 +88,7 @@ it('renders without crashing', () => {
 
 ```JavaScript
 test('demo mock functions', function () {
-  let handler = jest.fn()
+  const handler = jest.fn()
 
   let button = document.createElement('button')
 

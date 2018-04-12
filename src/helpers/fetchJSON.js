@@ -1,5 +1,5 @@
 /**
- * Wraps a promise and adds two methods to it (cancel() & isCancelled())
+ * Wraps a promise and adds two methods to it (cancel() && isCancelled())
  * Based on proposed solutions to this problem:
  * https://github.com/facebook/create-react-app/issues/3482
  * From here:
@@ -14,8 +14,12 @@ const makeCancellable = promise => {
 
   let wrappedPromise = new Promise((resolve, reject) => {
     promise.then(
-      val => {hasCancelled_ ? reject({ isCancelled: true }) : resolve(val)},
-      error => {hasCancelled_ ? reject({ isCancelled: true }) : reject(error)}
+      val => {
+        hasCancelled_ ? reject({ isCancelled: true }) : resolve(val);
+      },
+      error => {
+        hasCancelled_ ? reject({ isCancelled: true }) : reject(error);
+      }
     );
   });
 
@@ -35,7 +39,7 @@ const makeCancellable = promise => {
  * cancel() and isCancelled()
  */
 export const fetchJSON = url =>
-    makeCancellable(
+  makeCancellable(
     fetch(url)
       .then(function(response) {
         if (response.ok) {
@@ -50,7 +54,8 @@ export const fetchJSON = url =>
       })
       .catch(function(error) {
         console.warn(
-          "Warning: There was a problem with the fetch operation. " + error.message
+          "Warning: There was a problem with the fetch operation. " +
+            error.message
         );
       })
   );

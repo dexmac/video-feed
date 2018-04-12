@@ -35,11 +35,10 @@
     "server": "node api/server.js",
     "test": "BABEL_ENV=test jest",
     "tdd": "BABEL_ENV=test jest --watch",
-    "eject": "react-scripts eject",
     "lint": "eslint --ignore-pattern 'src/styles/*' -- src/**",
     "lint:fix": "eslint --fix --ignore-pattern 'src/styles/*' -- src/**",
-    "check": "yarn run lint && yarn run test",
-    "build": "yarn run check && react-scripts build"
+    "quality-check": "yarn run lint && yarn run test",
+    "build": "yarn run quality-check && react-scripts build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

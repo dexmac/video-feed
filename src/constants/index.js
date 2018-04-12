@@ -1,5 +1,6 @@
 export const VIDEO_FEED_ENDPOINT = "http://localhost:4000/content/feed/items";
-export const FACEBOOK_VIDEO_URL_PREFIX = "https://www.facebook.com/facebook/videos/";
+export const FACEBOOK_VIDEO_URL_PREFIX =
+  "https://www.facebook.com/facebook/videos/";
 export const YOUTUBE_VIDEO_URL_PREFIX = "https://www.youtube.com/embed/";
 
 export const FACEBOOK_VIDEO_SOURCE = "facebook";
