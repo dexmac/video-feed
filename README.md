@@ -31,8 +31,8 @@ The feed can then be filtered by the video type (URL / Facebook / Youtube).
 
 ## Testing
 - `yarn run lint` - Run the eslint checker
-- `yarn run lint` - Fix lint warning automatically
-- `yarn run tdd` - Launches the test runner
+- `yarn run lint:fix` - Fix lint warning automatically
+- `yarn run test` - Launches the test runner
 - `yarn run tdd` - Launches the test runner in interactive watch mode, allowing for TDD
 - `yarn run check` - running lint and test together. This script is used pre-build and in the `pre-commit` hook.
 
