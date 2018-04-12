@@ -1,18 +1,56 @@
 /**
+ * Wraps a promise and adds two methods to it (cancel() & isCancelled())
+ * Based on proposed solutions to this problem:
+ * https://github.com/facebook/create-react-app/issues/3482
+ * From here:
+ * https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
+ *
+ * @param promise
+ * @returns {Promise<any>} - the promise contains two methods: cancel() which will reject the promise and isCancelled() which returns
+ * the cancellation state
+ */
+const makeCancellable = promise => {
+  let hasCancelled_ = false;
+
+  let wrappedPromise = new Promise((resolve, reject) => {
+    promise.then(
+      val => {hasCancelled_ ? reject({ isCancelled: true }) : resolve(val)},
+      error => {hasCancelled_ ? reject({ isCancelled: true }) : reject(error)}
+    );
+  });
+
+  wrappedPromise.cancel = () => {
+    hasCancelled_ = true;
+  };
+  wrappedPromise.isCancelled = () => hasCancelled_;
+
+  return wrappedPromise;
+};
+
+/**
  * Fetches JSON from a given URL
  *
  * @param url
- * @returns {Promise<Response>}
+ * @returns {Promise<Response>} - the promise is wrapped by makeCancellable which provides two more methods on it:
+ * cancel() and isCancelled()
  */
-export const fetchJSON = async (url) => {
-    return fetch(url).then(function(response) {
-        if(response.ok) {
-            return response.json();
+export const fetchJSON = url =>
+    makeCancellable(
+    fetch(url)
+      .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.error(
+            `Error fetching JSON from ${url} - Network response status is: ${
+              response.status
+            }`
+          );
         }
-        else {
-            throw new Error(`Error fetching JSON from ${url} - Network response was not ok.`);
-        }
-    }).catch(function(error) {
-        throw new Error('There was a problem with the fetch operation. ' + error.message);
-    });
-};
+      })
+      .catch(function(error) {
+        console.error(
+          "There was a problem with the fetch operation. " + error.message
+        );
+      })
+  );

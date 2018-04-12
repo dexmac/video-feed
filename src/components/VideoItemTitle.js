@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class VideoItemTitle extends Component {
     render() {
@@ -11,5 +12,9 @@ class VideoItemTitle extends Component {
         );
     }
 }
+
+VideoItemTitle.propTypes = {
+    title: PropTypes.string
+};
 
 export default VideoItemTitle;

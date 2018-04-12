@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NAVBAR_BRAND } from './constants/index.js';
 import VideoFeedManager from "./containers/VideoFeedManager";
 import NavigationBar from "./components/NavigationBar";
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
     render() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class VideoItemViewsNumber extends Component {
     render() {
@@ -12,5 +13,9 @@ class VideoItemViewsNumber extends Component {
         );
     }
 }
+
+VideoItemViewsNumber.propTypes = {
+    title: PropTypes.number
+};
 
 export default VideoItemViewsNumber;

@@ -25,16 +25,23 @@ The feed can then be filtered by the video type (URL / Facebook / Youtube).
 <a name="Run"></a>
 ## Run
 
-To run the project, inside the root directory, you can run:
+## Testing
+- `yarn run lint` - Run the eslint checker
+- `yarn run lint` - Fix lint warning automatically
+- `yarn run tdd` - Launches the test runner
+- `yarn run tdd` - Launches the test runner in interactive watch mode, allowing for TDD
+- `yarn run check` - running lint and test together. This script is used pre-build and in the `pre-commit` hook.
+
+More info. and examples for writing unit tests can be found [here](./WRITING_TESTS.md).
 
 ### Running the project in a Browser 
-
-### `yarn dev`
+To run the project, inside the root directory, you can run:
+### `yarn run dev`
 
 Runs the server and the client together for easy testing and development.
 Open [http://localhost:3000](http://localhost:3000) to view the feed in the browser.
 
-### `yarn start`
+### `yarn run client`
 
 Runs the client side app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -42,10 +49,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `yarn server`
+### `yarn run server`
 
 Launches an Express server on port 4000.<br>
 Open [http://localhost:4000/content/feed/items](http://localhost:4000/content/feed/items) to view the video feed in the browser.
+
+### `yarn run build`
+
+Builds the app for production to the `build` folder.<br>
+It lints and runs the unit tests and then correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 <a name="Contribute"></a>
 
@@ -64,16 +83,22 @@ The PR review process can be found [here](./PR_REVIEW.md).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-### Package and Dependency Management
+*Package and Dependency Management*
 The project uses yarn as it's package manager, however, npm should work seamlessly as well.
-Wepack is used to pack the bundle and provides ES6 modules dependency management.
+Webpack is used to pack the bundle and provides ES6 modules dependency management.
 
 - `yarn` / `npm` - For package management
 - `react` + `react-dom` - For ReactJS Apps
 - `react-bootstrap` - For nice looking NavBar
 - `react-player` - React Component For playing Facebook, Youtube and Other Video URLs from https://www.npmjs.com/package/react-player. 
-- `react-scripts` - For supplying Webpack, JEST, etc. behind the scenes
+- `react-select` - Filterable select for filtering video types
+- `react-scripts` - For supplying Webpack, Jest, etc. behind the scenes, as part of create-react-app's setup
 - `express` - For running the video feed server
+- `prop-types` - For some measure of static type checking
+- `Jest` + `enzyme` + `enzyme-adapter-react-16` + `react-test-renderer` - Used for Unit Testing
+- `babel` - For transpiling ES6 and JSX
+- `eslint` - For linting the code
+- `whatwg-fetch` && `raf` && `identity-obj-proxy` - fetch and requestAnimationFrame polyfills + mock CSS files for JEST tests
 - `concurrently` - For running both client and server together (using `yarn dev`)
 
 ## Supported Browsers
@@ -86,18 +111,25 @@ Please refer [to the React documentation](https://reactjs.org/docs/react-dom.htm
 ```
 video-feed/
   README.md - This file
+  WRITING_TESTS.md - Guide for writing units tests
+  LICENSE - Copyright, License and OSS usage
+  PR_REVIEW.md - Guidlines for creating pull requests
+  CONTRIBUTING.md - Guidelines for contributing to the repo.
+  CHANGELOG.txt - Project change documentation
   node_modules/ - Created after initial 'yarn install'
   package.json - Npm modules and package version
   public/ 
     index.html - Runner HTML
     favicon.ico
   src/ 
-    App.css - Main app CSS
     App.js - Parent app component
     App.test.js - Example unit test
-    index.css - General CSS
     index.js - React App entry point
+    setupTests.js - For jest unit tests setup and mocks  
     registerServiceWorker.js - To enable offline caching (PWA)
+  styles/
+    App.css - Main app CSS
+    index.css - General CSS
   api/
     items - Video feed JSON
     server.js - Express Server to serve feed on port 4000
@@ -107,5 +139,5 @@ video-feed/
   constants/
     index.js - App constants
   helpers/
-    fetchJSON.js - Fetch JSON wrapper
+    fetchJSON.js - Fetch JSON wrapper (cancellable)
 ```
