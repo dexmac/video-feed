@@ -41,16 +41,16 @@ export const fetchJSON = url =>
         if (response.ok) {
           return response.json();
         } else {
-          console.error(
-            `Error fetching JSON from ${url} - Network response status is: ${
+          console.warn(
+            `Warning: Error fetching JSON from ${url} - Network response status is: ${
               response.status
             }`
           );
         }
       })
       .catch(function(error) {
-        console.error(
-          "There was a problem with the fetch operation. " + error.message
+        console.warn(
+          "Warning: There was a problem with the fetch operation. " + error.message
         );
       })
   );
