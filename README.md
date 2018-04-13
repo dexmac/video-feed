@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/dexmac/video-feed.svg?branch=master)](https://travis-ci.org/dexmac/video-feed)
+[![Coverage Status](https://coveralls.io/repos/github/dexmac/video-feed/badge.svg)](https://coveralls.io/github/dexmac/video-feed)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/dexmac/video-feed/master/LICENSE)
 
 **Table of Contents**
