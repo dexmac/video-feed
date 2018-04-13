@@ -8,7 +8,7 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it("renders correctly", () => {
+it("renders correctly && matches snapshot", () => {
   const tree = shallow(<App />);
   expect(tree).toMatchSnapshot();
 });

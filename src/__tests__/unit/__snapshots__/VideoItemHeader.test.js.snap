@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly && matches snapshot 1`] = `
+exports[`VideoItemHeader renders correctly && matches snapshot 1`] = `
 <div
   className="video-item-header"
 >

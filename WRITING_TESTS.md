@@ -7,7 +7,8 @@ code coverage reports at `./coverage/lcov-report/index.html`.
 Tests are stored in the [src/__tests__/unit](src/__tests__/unit) directory.
 They can be run with the following commands:
 
-- `yarn / npm test` - to run the test suite once
+- `yarn / npm run test` - to run the test suite once
+- `yarn / npm run tdd` - to run it continuously, in "tdd-mode"
 
 Before a Pull Request will be considered for merge:
 
@@ -40,6 +41,13 @@ https://medium.freecodecamp.org/the-right-way-to-test-react-components-548a4736a
 1. Will the test have to duplicate exactly the application code? This will make it brittle.
 2. Will making assertions in the test duplicate any behavior that is already covered by (and the responsibility of) library code?
 3. From an outsider’s perspective, is this detail important, or is it only an internal concern? Can the effect of this internal detail be described using only the component’s public API?"
+In essence:
+1. Find your Component Contract first
+2. Decide which constraints are worth testing and which aren’t
+3. Prop types are not worth testing
+4. Inline styles are usually not worth testing
+5. The components you render and what props you give them are important to test
+6. Don’t test things that are not the concern of your component
 
 *Basic Test*
 

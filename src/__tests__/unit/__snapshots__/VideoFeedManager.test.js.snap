@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly && matches snapshot 1`] = `
+exports[`VideoFeedManager renders correctly && matches snapshot 1`] = `
 <div
   className="video-feed"
 >
@@ -8,4 +8,170 @@ exports[`renders correctly && matches snapshot 1`] = `
     fetchAndShowVideos={[Function]}
   />
 </div>
+`;
+
+exports[`VideoFeedManager when \`prepareVideoItemURLs\` is run with mock data should display a video item feed with 1 element and match the snapshot\` 1`] = `
+<VideoFeedManager>
+  <div
+    className="video-feed"
+  >
+    <VideoSourceSelect
+      fetchAndShowVideos={[Function]}
+    >
+      <Select
+        arrowRenderer={[Function]}
+        autosize={true}
+        backspaceRemoves={true}
+        backspaceToRemoveMessage="Press backspace to remove {label}"
+        clearAllText="Clear all"
+        clearRenderer={[Function]}
+        clearValueText="Clear value"
+        clearable={true}
+        closeOnSelect={true}
+        deleteRemoves={true}
+        delimiter=","
+        disabled={false}
+        escapeClearsValue={true}
+        filterOptions={[Function]}
+        ignoreAccents={true}
+        ignoreCase={true}
+        inputProps={Object {}}
+        isLoading={false}
+        joinValues={false}
+        labelKey="label"
+        matchPos="any"
+        matchProp="any"
+        menuBuffer={0}
+        menuRenderer={[Function]}
+        multi={true}
+        name="form-field-name"
+        noResultsText="No results found"
+        onBlurResetsInput={true}
+        onChange={[Function]}
+        onCloseResetsInput={true}
+        onSelectResetsInput={true}
+        openOnClick={true}
+        optionComponent={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "url",
+              "value": "url",
+            },
+            Object {
+              "label": "youtube",
+              "value": "youtube",
+            },
+            Object {
+              "label": "facebook",
+              "value": "facebook",
+            },
+          ]
+        }
+        pageSize={5}
+        placeholder="Sources to filter by..."
+        removeSelected={true}
+        required={false}
+        rtl={false}
+        scrollMenuIntoView={true}
+        searchable={true}
+        simpleValue={false}
+        tabSelectsValue={true}
+        trimFilter={true}
+        value={Array []}
+        valueComponent={[Function]}
+        valueKey="value"
+      >
+        <div
+          className="Select is-clearable is-searchable Select--multi"
+        >
+          <div
+            className="Select-control"
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+          >
+            <span
+              className="Select-multi-value-wrapper"
+              id="react-select-4--value"
+            >
+              <div
+                className="Select-placeholder"
+              >
+                Sources to filter by...
+              </div>
+              <AutosizeInput
+                aria-activedescendant="react-select-4--value"
+                aria-expanded="false"
+                aria-haspopup="false"
+                aria-owns=""
+                className="Select-input"
+                injectStyles={true}
+                minWidth="5"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                role="combobox"
+                value=""
+              >
+                <div
+                  className="Select-input"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-activedescendant="react-select-4--value"
+                    aria-expanded="false"
+                    aria-haspopup="false"
+                    aria-owns=""
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={false}
+                    role="combobox"
+                    style={
+                      Object {
+                        "boxSizing": "content-box",
+                        "width": "5px",
+                      }
+                    }
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  />
+                </div>
+              </AutosizeInput>
+            </span>
+            <span
+              className="Select-arrow-zone"
+              onMouseDown={[Function]}
+            >
+              <span
+                className="Select-arrow"
+                onMouseDown={[Function]}
+              />
+            </span>
+          </div>
+        </div>
+      </Select>
+    </VideoSourceSelect>
+  </div>
+</VideoFeedManager>
 `;

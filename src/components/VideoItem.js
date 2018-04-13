@@ -30,7 +30,7 @@ class VideoItem extends Component {
           playing
           muted
           playsinline
-	  config={{ file: {forceVideo: true } }}
+          config={{ file: { forceVideo: true } }}
         />
       );
     } else {
