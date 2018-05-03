@@ -26,7 +26,9 @@ class VideoItem extends Component {
           key={item ? item.videoId : null}
           width="100%"
           height="100%"
-          onError={() => this.onVideoError(item ? item.url : null)}
+          onError={() => {
+            this.onVideoError(item ? item.url : null);
+          }}
           playing
           muted
           playsinline

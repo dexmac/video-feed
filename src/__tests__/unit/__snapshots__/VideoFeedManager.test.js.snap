@@ -2,10 +2,13 @@
 
 exports[`VideoFeedManager renders correctly && matches snapshot 1`] = `
 <div
-  className="video-feed"
+  className="video-feed-container"
 >
   <VideoSourceSelect
-    fetchAndShowVideos={[Function]}
+    fetchVideos={[Function]}
+  />
+  <VideoFeed
+    items={Array []}
   />
 </div>
 `;
@@ -13,10 +16,10 @@ exports[`VideoFeedManager renders correctly && matches snapshot 1`] = `
 exports[`VideoFeedManager when \`prepareVideoItemURLs\` is run with mock data should display a video item feed with 1 element and match the snapshot\` 1`] = `
 <VideoFeedManager>
   <div
-    className="video-feed"
+    className="video-feed-container"
   >
     <VideoSourceSelect
-      fetchAndShowVideos={[Function]}
+      fetchVideos={[Function]}
     >
       <Select
         arrowRenderer={[Function]}
@@ -172,6 +175,15 @@ exports[`VideoFeedManager when \`prepareVideoItemURLs\` is run with mock data sh
         </div>
       </Select>
     </VideoSourceSelect>
+    <VideoFeed
+      items={Array []}
+    >
+      <div
+        className="video-feed"
+      >
+        ;
+      </div>
+    </VideoFeed>
   </div>
 </VideoFeedManager>
 `;

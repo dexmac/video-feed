@@ -89,5 +89,7 @@
         "statements": 80
       }
     }
-  }
+  },
+  "author": "dexmac",
+  "license": "Apache 2"
 }

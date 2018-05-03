@@ -15,12 +15,12 @@ class VideoSourceSelect extends Component {
    * @param selectedOption
    */
   handleSourceSelectionChange = selectedSources => {
-    if (typeof selectedSources === "object" && selectedSources.length) {
+    if (typeof selectedSources === "object") {
       // Updating select box to reflect new change
       this.setState({ selectedSources });
 
       // Filtering videos based on selected / empty source
-      this.props.fetchAndShowVideos(selectedSources);
+      this.props.fetchVideos(selectedSources);
     }
   };
 
@@ -56,7 +56,7 @@ class VideoSourceSelect extends Component {
 }
 
 VideoSourceSelect.propTypes = {
-  fetchAndShowVideos: PropTypes.func.isRequired // onchange handler, supplied by feed manager
+  fetchVideos: PropTypes.func.isRequired // onchange handler, supplied by feed manager
 };
 
 export default VideoSourceSelect;

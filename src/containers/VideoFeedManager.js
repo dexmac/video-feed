@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VideoItem from "../components/VideoItem";
+import VideoFeed from "../components/VideoFeed";
 import VideoSourceSelect from "../components/VideoSourceSelect";
 import { fetchJSON } from "../helpers/fetchJSON";
 import * as constants from "../constants/index.js";
@@ -59,7 +59,7 @@ class VideoFeedManager extends Component {
    * Fetching videos from feed endpoint + filter in query string & preparing videos for display
    * @param selectedSources - array - types to filter videos by - can be: '' / url / youtube / facebook
    */
-  fetchAndShowVideos = (selectedSources = []) => {
+  fetchVideos = (selectedSources = []) => {
     const sourcesToFilter = selectedSources.map(source => source.value);
     const videoEndpointQueryString = selectedSources.length
       ? "?" +
@@ -87,7 +87,7 @@ class VideoFeedManager extends Component {
    * Video feed component entry point
    */
   componentDidMount() {
-    this.fetchAndShowVideos();
+    this.fetchVideos();
   }
 
   componentWillUnmount() {
@@ -98,9 +98,7 @@ class VideoFeedManager extends Component {
     let Feed;
     if (this.state.shouldShowFeed) {
       // Populating feed items
-      Feed = this.state.items.map((item, i) => {
-        return <VideoItem item={item} key={i} />;
-      });
+      Feed = <VideoFeed items={this.state.items} />;
     } else {
       Feed = (
         <div className="video-load-error-text">{this.state.errorString}</div>
@@ -108,8 +106,8 @@ class VideoFeedManager extends Component {
     }
 
     return (
-      <div className="video-feed">
-        <VideoSourceSelect fetchAndShowVideos={this.fetchAndShowVideos} />
+      <div className="video-feed-container">
+        <VideoSourceSelect fetchVideos={this.fetchVideos} />
         {Feed}
       </div>
     );

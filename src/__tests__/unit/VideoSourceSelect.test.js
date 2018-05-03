@@ -11,7 +11,7 @@ describe("VideoSourceSelect", () => {
    */
   beforeEach(() => {
     props = {
-      fetchAndShowVideos: undefined
+      fetchVideos: undefined
     };
     mountedVideoSourceSelect = undefined;
   });
@@ -22,7 +22,7 @@ describe("VideoSourceSelect", () => {
   it("renders correctly && matches snapshot", () => {
     const fetchVideosMock = jest.fn();
     const tree = shallow(
-      <VideoSourceSelect fetchAndShowVideos={fetchVideosMock} />
+      <VideoSourceSelect fetchVideos={fetchVideosMock} />
     );
     expect(tree).toMatchSnapshot();
   });
@@ -38,32 +38,32 @@ describe("VideoSourceSelect", () => {
     return mountedVideoSourceSelect;
   };
 
-  describe("when `fetchAndShowVideos` method is defined and a source has been selected", () => {
+  describe("when `fetchVideos` method is defined and a source has been selected", () => {
     beforeEach(() => {
-      props.fetchAndShowVideos = jest.fn(() => {});
+      props.fetchVideos = jest.fn(() => {});
       const videoSelect = videoSourceSelect();
       videoSelect.instance().handleSourceSelectionChange(["url"]);
     });
 
-    it("calls the fetchAndShowVideos method", () => {
+    it("calls the fetchVideos method", () => {
       const videoSelect = videoSourceSelect();
       expect(
-        videoSelect.instance().props.fetchAndShowVideos
+        videoSelect.instance().props.fetchVideos
       ).toHaveBeenCalled();
     });
   });
 
-  describe("when `fetchAndShowVideos` method is defined and a source has been selected", () => {
+  describe("when `fetchVideos` method is defined and a source has been selected", () => {
     beforeEach(() => {
-      props.fetchAndShowVideos = jest.fn(() => {});
+      props.fetchVideos = jest.fn(() => {});
       const videoSelect = videoSourceSelect();
       videoSelect.instance().handleSourceSelectionChange(undefined);
     });
 
-    it("calls the fetchAndShowVideos method", () => {
+    it("calls the fetchVideos method", () => {
       const videoSelect = videoSourceSelect();
       expect(
-        videoSelect.instance().props.fetchAndShowVideos
+        videoSelect.instance().props.fetchVideos
       ).not.toHaveBeenCalled();
     });
   });
