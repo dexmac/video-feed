@@ -77,7 +77,10 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
             config={
               Object {
                 "file": Object {
-                  "forceVideo": true,
+                  "attributes": Object {
+                    "autoPlay": "true",
+                    "muted": "true",
+                  },
                 },
               }
             }
@@ -130,11 +133,13 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                       "appId": "1309697205772819",
                     },
                     "file": Object {
-                      "attributes": Object {},
+                      "attributes": Object {
+                        "autoPlay": "true",
+                        "muted": "true",
+                      },
                       "forceAudio": false,
                       "forceDASH": false,
                       "forceHLS": false,
-                      "forceVideo": true,
                       "hlsOptions": Object {},
                       "tracks": Array [],
                     },
@@ -224,11 +229,13 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                         "appId": "1309697205772819",
                       },
                       "file": Object {
-                        "attributes": Object {},
+                        "attributes": Object {
+                          "autoPlay": "true",
+                          "muted": "true",
+                        },
                         "forceAudio": false,
                         "forceDASH": false,
                         "forceHLS": false,
-                        "forceVideo": true,
                         "hlsOptions": Object {},
                         "tracks": Array [],
                       },
@@ -302,8 +309,10 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                   wrapper="div"
                 >
                   <video
+                    autoPlay="true"
                     controls={false}
                     loop={false}
+                    muted="true"
                     preload="auto"
                     src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                     style={

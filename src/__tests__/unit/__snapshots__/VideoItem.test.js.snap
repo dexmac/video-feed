@@ -16,7 +16,10 @@ exports[`VideoItem renders correctly && matches snapshot 1`] = `
       config={
         Object {
           "file": Object {
-            "forceVideo": true,
+            "attributes": Object {
+              "autoPlay": "true",
+              "muted": "true",
+            },
           },
         }
       }

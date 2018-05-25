@@ -26,13 +26,17 @@ class VideoItem extends Component {
           key={item ? item.videoId : null}
           width="100%"
           height="100%"
-          onError={() => {
-            this.onVideoError(item ? item.url : null);
+          onError={e => {
+            this.onVideoError(item ? e + " for url: " + item.url : e);
           }}
           playing
           muted
           playsinline
-          config={{ file: { forceVideo: true } }}
+          config={{
+            file: {
+              attributes: { muted: "true", autoPlay: "true" }
+            }
+          }}
         />
       );
     } else {
