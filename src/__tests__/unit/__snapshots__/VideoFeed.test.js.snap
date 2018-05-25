@@ -81,6 +81,7 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                     "autoPlay": "true",
                     "muted": "true",
                   },
+                  "forceVideo": true,
                 },
               }
             }
@@ -140,6 +141,7 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                       "forceAudio": false,
                       "forceDASH": false,
                       "forceHLS": false,
+                      "forceVideo": true,
                       "hlsOptions": Object {},
                       "tracks": Array [],
                     },
@@ -236,6 +238,7 @@ exports[`VideFeed should display a video item feed with 1 element and match the 
                         "forceAudio": false,
                         "forceDASH": false,
                         "forceHLS": false,
+                        "forceVideo": true,
                         "hlsOptions": Object {},
                         "tracks": Array [],
                       },

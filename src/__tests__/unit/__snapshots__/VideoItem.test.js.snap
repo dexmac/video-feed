@@ -20,6 +20,7 @@ exports[`VideoItem renders correctly && matches snapshot 1`] = `
               "autoPlay": "true",
               "muted": "true",
             },
+            "forceVideo": true,
           },
         }
       }

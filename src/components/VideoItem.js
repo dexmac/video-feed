@@ -34,7 +34,8 @@ class VideoItem extends Component {
           playsinline
           config={{
             file: {
-              attributes: { muted: "true", autoPlay: "true" }
+              attributes: { muted: "true", autoPlay: "true" },
+              forceVideo: true
             }
           }}
         />
