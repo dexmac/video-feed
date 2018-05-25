@@ -1,3 +1,9 @@
+---
+name: Bug / New Feature Template
+about: Template for opening new issues / feature requests and helping us improve
+
+---
+
 ##Bug / New Feature Request##
 
 **Bug or feature request?**

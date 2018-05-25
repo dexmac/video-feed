@@ -31,5 +31,3 @@ How to perform reviews?
 Tips for submitters:
 - Please keep the code short: Beyond 200 lines and the effectiveness of a review drops significantly. By the time you’re at more than 400 they become almost pointless.
   Provide context: Link to any related tickets, or the spec. Provide short, but useful commit messages and plenty of comments throughout your code. It’ll help the reviewer and you’ll get fewer issues coming back.
-     
-
