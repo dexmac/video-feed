@@ -18,6 +18,8 @@ A filterable video-feed demo in ReactJS. Uses Express as the backend to serve a 
 which is comprised of - regular video URLs, Facebook & Youtube videos.
 The feed can then be filtered by the video type (URL / Facebook / Youtube).
 
+A more up-to-date demo, which also uses Redux, can be found here: https://github.com/dexmac/video-feed-redux
+
 ![preview](video-feed.gif)
 
 <a name="Install"></a>
